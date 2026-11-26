@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sophia's Website</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="#">
+    </head>
+
+    <body>
+
+        <h1>HTML5 Element Demonstrations</h1>
+
+        
+        <section>
+            <h2>Audio </h2>
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section>
+            <h2>Video</h2>
+            
+            <video width="320" height="240" controls>
+                <source src="video-file.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section>
+            <h2>Canvas</h2>
+
+            <canvas id="demoCanvas" width="200" height="100">
+            </canvas>
+        </section>
+
+        <section>
+            <h2>Template </h2>
+  
+            <template id="experimentalTemplate">
+                <div>
+                    <h3>Hidden Content </h3>
+                </div>
+            </template>
+        </section>
+
+   
+        <script>
+            const canvas = document.getElementById('demoCanvas');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#007BFF';
+                ctx.fillRect(50, 25, 100, 50);
+            }
+        </script>
+    </body>
+</html>

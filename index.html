@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sophia's Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="#">
+        <link rel="stylesheet" href="main.css">
+        <script src="theme.js"></script>
+        <script src="dog-panel.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li> <a href="#">Home</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="form-no-js.html">Reach Out! (no JS)</a></li>
+                    <li><a href="form-with-js.html">Reach Out! (with JS)</a></li>
+
+                    <li id="theme-item" hidden><button type="button" id="theme-toggle">Theme</button></li>
+                    
+                </ul>
+            </nav>        
+        </header>
+
+        <main>
+    
+
+            <h1>Welcome!</h1>
+
+           
+            <p class="dog-controls">
+                <button type="button" id="dog-mode-toggle" aria-controls="dog-panel" hidden>Switch to compact view</button>
+            </p>
+
+            <dog-panel id="dog-panel">
+                <div class="dog-fallback">
+                    <p><strong>Enable JavaScript to load live dog photos for this widget.</strong> Until then, here's Laika, my border collie.</p>
+                    <img src="laika.jpg" alt="Laika, my black-and-white border collie, looking up at the camera with her tongue out.">
+                </div>
+            </dog-panel>
+
+            <span><br></span>
+
+            <hello-world></hello-world>
+
+            <script>
+                class HelloWorldElement extends HTMLElement {
+            
+                    connectedCallback() {
+                        console.log("Hello World!");
+                    }
+                }
+                customElements.define('hello-world', HelloWorldElement);
+            </script>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5955.7168363562805!2d-117.23571695778676!3d32.876684590077375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c4414caf4f%3A0xefb6aafc89913ea7!2sUniversity%20of%20California%20San%20Diego!5e0!3m2!1sen!2sus!4v1792089518943!5m2!1sen!2sus" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+
+            
+        </main>
+        
+        <noscript>
+            <div style="background-color: rgb(214, 102, 102);">
+                <h2>You don't need Javascript yet...</h2>
+            </div>
+        </noscript>
+
+        <footer>made at 2&colon;00 am by piago</footer>
+    </body>
+
+</html>

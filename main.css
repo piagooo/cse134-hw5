@@ -1,0 +1,259 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    color-scheme: light;
+    --background-color: #b9dbef;
+    --text-color: #1d1d2a;
+    --muted-text: #374151;
+    --link-color: #0b3d91;
+    --surface-color: #ffffff;
+    --border-color: #1d1d2a;
+    --input-bg: #ffffff;
+    --input-text: #1d1d2a;
+    --input-border: #6b7280;
+    --focus-color: #012b87;
+    --valid-border: #1a7f3c;
+    --valid-bg: #d8f0df;
+    --invalid-border: #8c0909;
+    --invalid-bg: #fef2f2;
+    --button-bg: #1f2937;
+    --button-text: #ffffff;
+    --button-hover: #111827;
+    --list-accent: rgb(68, 0, 0);
+    --warn-bg: #fff4d6;
+    --warn-border: #8a5a00;
+    --limit-bg: #ffe3e3;
+    --font-stack: system-ui, -apple-system, sans-serif;
+    --layout-spacing: 10px;
+}
+
+:root[data-theme="dark"]{
+    color-scheme: dark;
+    --background-color: #12161f;
+    --text-color: #e8ecf3;
+    --muted-text: #b6bfce;
+    --link-color: #9cc4ff;
+    --surface-color: #1c2230;
+    --border-color: #e8ecf3;
+    --input-bg: #1c2230;
+    --input-text: #e8ecf3;
+    --input-border: #8a94a6;
+    --focus-color: #ffd166;
+    --valid-border: #4cc27a;
+    --valid-bg: #16301f;
+    --invalid-border: #ff8a8a;
+    --invalid-bg: #3a1a1a;
+    --button-bg: #e8ecf3;
+    --button-text: #12161f;
+    --button-hover: #ffffff;
+    --list-accent: #ffb4b4;
+    --warn-bg: #3a2d0a;
+    --warn-border: #ffcc66;
+    --limit-bg: #3a1a1a;
+}
+
+[hidden]{
+    display: none !important;
+}
+
+html{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-stack);
+
+}    
+h1{
+    font-size: 2.00rem;
+    margin-bottom: var(--layout-spacing);
+}
+h2{
+    font-size: 1.75rem;
+}
+h3{
+    font-size: 1.50rem;
+}
+body{
+    max-width: 80%;
+    margin: auto;
+}
+
+nav{
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+        
+        a, a :visited{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        
+    }
+    
+    button{
+        font: inherit;
+        color: var(--text-color);
+        background: none;
+        border: 1px solid currentColor;
+        border-radius: 0.375rem;
+        padding: 0.25rem 0.6rem;
+        cursor: pointer;
+    }
+}
+
+input:focus{
+    background-color: #bcdfbc;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+form, article{
+    margin: 10px;
+    padding: 25px;
+    border: 2px dashed var(--border-color);
+    img{
+        width: 25%;
+        height: 25%;
+    }
+}
+
+div[data-theme="normal"]{
+    background-color: var(--surface-color);
+}
+
+main > iframe{
+    width: 500px;
+    height: 250px;
+    max-width: 100%;
+    
+}
+picture ~ ol li{
+    color: var(--list-accent);
+}
+
+
+dog-panel{
+    --dog-panel-bg: var(--surface-color);
+    --dog-panel-text: var(--text-color);
+    --dog-panel-border: var(--border-color);
+    --dog-panel-button-bg: var(--button-bg);
+    --dog-panel-button-text: var(--button-text);
+    --dog-panel-success: var(--valid-border);
+    --dog-panel-error: var(--invalid-border);
+}
+
+
+dog-panel{
+    display: block;
+    box-sizing: border-box;
+    max-width: 32rem;
+    margin-block: var(--layout-spacing);
+    padding: 1.25rem;
+    color: var(--dog-panel-text, #1d1d2a);
+    background-color: var(--dog-panel-bg, #ffffff);
+    border: 2px solid var(--dog-panel-border, #1d1d2a);
+    border-radius: 0.75rem;
+}
+
+dog-panel[compact]{
+    max-width: 20rem;
+    padding: 0.75rem;
+}
+
+dog-panel h2{
+    margin-bottom: 0.5rem;
+}
+
+dog-panel img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    margin-block: 0.5rem;
+}
+
+dog-panel .caption{
+    font-weight: 600;
+}
+
+dog-panel button{
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    color: var(--dog-panel-button-text, #ffffff);
+    background-color: var(--dog-panel-button-bg, #1f2937);
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+dog-panel .status{
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+}
+
+dog-panel .status[data-state="success"]{
+    border-color: var(--dog-panel-success, #1a7f3c);
+}
+
+
+dog-panel .status[data-state="error"]{
+    border-style: dashed;
+    border-color: var(--dog-panel-error, #8c0909);
+    font-weight: 600;
+}
+
+.dog-controls{
+    margin-block: var(--layout-spacing);
+}
+
+.dog-controls button{
+    font: inherit;
+    color: var(--text-color);
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+}
+
+
+
+@view-transition{
+    navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce){
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*){
+        animation: none !important;
+    }
+}
+
+@media screen and (max-width: 375px){
+    nav{
+        text-align: center;
+        ul{        
+            display: block;
+        }
+      
+    }
+}
+

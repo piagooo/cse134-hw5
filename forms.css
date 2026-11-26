@@ -1,0 +1,117 @@
+#to-speak-or-to-die{
+    box-sizing: border-box;
+    max-width: 40rem;
+    margin-inline: auto;
+}
+
+#to-speak-or-to-die fieldset{
+    border: none;
+    min-width: 0;           
+}
+
+#to-speak-or-to-die legend{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-note, .hint{
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 1rem;
+}
+
+.field label{
+    font-weight: 600;
+}
+
+.field :is(input, textarea){
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 2.25rem 0.5rem 0.625rem;   
+    font: inherit;
+    color: var(--input-text);
+    background-color: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 0.375rem;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    background-position: right 0.6rem center;
+}
+
+.field textarea{
+    min-height: 7rem;
+    resize: vertical;
+    background-position: right 0.6rem top 0.6rem;
+}
+
+
+.field :is(input, textarea):user-valid{
+    border-color: var(--valid-border);
+    background-color: var(--valid-bg);
+   
+}
+
+.field :is(input, textarea):user-invalid{
+    border-color: var(--invalid-border);
+    border-style: dashed;            /* shape change, not just color; same width = no shift */
+    background-color: var(--invalid-bg);
+    
+}
+
+button[type="submit"]{
+    margin-top: 1.25rem;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--button-hover);
+}
+
+.message-area{
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border: 2px solid var(--input-border);
+    border-radius: 0.375rem;
+    background-color: var(--surface-color);
+}
+
+.message-area ul{
+    margin: 0.25rem 0 0 1.25rem;
+}
+
+#error-area{
+    min-height: 3.5rem;               
+}
+
+#info-area p{
+    margin: 0;
+}
+
+#info-area[data-state="warning"]{
+    border-color: var(--warn-border);
+    border-style: dashed;
+    background-color: var(--warn-bg);
+}
+
+#info-area[data-state="limit"]{
+    border-color: var(--invalid-border);
+    border-style: double;
+    border-width: 4px;
+    background-color: var(--limit-bg);
+    font-weight: 600;
+}

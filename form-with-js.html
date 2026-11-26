@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sophia's Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="#">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="forms.css">
+        <script src="theme.js"></script>
+        <script src="form.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li> <a href="index.html">Home</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="form-no-js.html">Reach Out! (no JS)</a></li>
+                    <li><a href="#">Reach Out! (JS)</a></li>
+
+                    <li id="theme-item" hidden><button type="button" id="theme-toggle">Theme</button></li>
+                </ul>
+            </nav>        
+        </header>
+
+            <form action="https://httpbin.org/post" method="post"  id="to-speak-or-to-die">
+                <fieldset>
+                    <legend>Say Something, Anything!</legend>
+                    <small class="form-note">All fields are required.</small>
+
+                    <form-field class="field">
+                        <label for="user-name">Name (required): </label>
+                        <input type="text" id="user-name" autocomplete="name" name="user-name" minlength="1" maxlength="100" required aria-describedby="user-name-hint">
+                        <small class="hint" id="user-name-hint">1 to 100 characters. Any language, apostrophes and hyphens are fine.</small>
+                    </form-field>
+
+                    <form-field class="field">
+                        <label for="user-email">Email Address (required): </label>
+                        <input type="email" id="user-email" autocomplete="email" name="user-email" required aria-describedby="user-email-hint">
+                        <small class="hint" id="user-email-hint">Use the format name@example.com.</small>
+                    </form-field>
+                        
+                        
+                    <form-field class="field">
+                        <label for="user-message">Your Message (required):</label>
+                
+                        <textarea id="user-message" name="user-message" minlength="10" maxlength="1000" required aria-describedby="user-message-hint"></textarea>
+
+                        <small class="hint" id="user-message-hint">10 to 1,000 characters.</small>
+                    </form-field>
+
+                    <input type="hidden" name="possible_bot" value="true">   
+
+                    <input type="hidden" id="form-errors-input" name="form-errors" disabled>
+
+                    <error-messages id="message-areas" hidden>
+                        <div id="error-area" class="message-area" aria-live="polite"></div>
+                        <div id="info-area" class="message-area" data-state="normal">
+                            <p id="char-count"></p>
+                            <p id="char-warning" aria-live="polite"></p>
+                        </div>
+                    </error-messages>
+                        
+                    
+                    <button type="submit">Send Message</button>
+                </fieldset>
+            </form>
+
+    </body>
+</html>
